@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:icon="@drawable/main_page_icon"
+        android:title="Главная" />
 
+    <item
+        android:id="@+id/catalogFragment"
+        android:icon="@drawable/catalog_page_icon"
+        android:title="Каталог" />
+
+    <item
+        android:icon="@drawable/basket_page_icon"
+        android:title="Корзина" />
+
+    <item
+        android:icon="@drawable/discount_page_icon"
+        android:title="Акции" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/profile_page_icon"
+        android:title="Профиль" />
 
 </menu>

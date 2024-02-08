@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "sam.sultan.testTask"
+    namespace = "sam.sultan.onlineCatalog"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "sam.sultan.testTask"
+        applicationId = "sam.sultan.onlineCatalog"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

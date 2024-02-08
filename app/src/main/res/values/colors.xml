@@ -4,4 +4,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="edit_text_bg">#F8F8F8</color>
     <color name="register_btn_bg">#D62F89</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray">#A0A1A3</color>
+    <color name="pink">#D62F89</color>
+    <color name="dark">#3E3E3E</color>
+    <color name="selected_tab">#52606D</color>
 </resources>

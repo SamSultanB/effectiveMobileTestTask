@@ -1,4 +1,4 @@
-package sam.sultan.testTask
+package sam.sultan.onlineCatalog
 
 import org.junit.Test
 

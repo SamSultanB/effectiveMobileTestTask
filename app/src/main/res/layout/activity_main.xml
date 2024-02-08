@@ -26,6 +26,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/main_menu" />
+        android:visibility="gone"
+        app:menu="@menu/main_menu"
+        style="@style/BottomNavigationTextStyle"
+        android:background="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:itemActiveIndicatorStyle="@style/ShapeAppearance.Material3.NavigationBarView.ActiveIndicator"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

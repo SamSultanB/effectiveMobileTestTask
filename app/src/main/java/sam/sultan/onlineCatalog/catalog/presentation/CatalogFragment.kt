@@ -1,12 +1,11 @@
-package sam.sultan.testTask.catalog.presentation
+package sam.sultan.onlineCatalog.catalog.presentation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import sam.sultan.testTask.R
-import sam.sultan.testTask.databinding.FragmentCatalogBinding
+import sam.sultan.onlineCatalog.databinding.FragmentCatalogBinding
 
 class CatalogFragment : Fragment() {
 

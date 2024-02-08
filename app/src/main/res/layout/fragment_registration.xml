@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".registration.presentation.RegistrationFragment">
+    tools:context="sam.sultan.onlineCatalog.registration.presentation.RegistrationFragment">
 
     <TextView
         android:id="@+id/titleTxt"
@@ -82,6 +82,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/loginBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"

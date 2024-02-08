@@ -1,4 +1,4 @@
-package sam.sultan.testTask.registration.presentation
+package sam.sultan.onlineCatalog.registration.presentation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import sam.sultan.testTask.R
-import sam.sultan.testTask.databinding.FragmentRegistrationBinding
+import sam.sultan.onlineCatalog.R
+import sam.sultan.onlineCatalog.databinding.FragmentRegistrationBinding
 
 class RegistrationFragment : Fragment() {
 
@@ -28,8 +29,12 @@ class RegistrationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val customClearIcon = ContextCompat.getDrawable(requireContext(), R.drawable.cancel_icon)
         binding.nameEditTxtContainer.setEndIconDrawable(customClearIcon)
-        val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-        bottomNavigationView?.visibility = View.GONE
+        binding.loginBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_registrationFragment_to_catalogFragment)
+            val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+            bottomNavigationView?.visibility = View.VISIBLE
+        }
+
     }
 
     override fun onDestroyView() {

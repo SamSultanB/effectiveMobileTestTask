@@ -1,4 +1,4 @@
-package sam.sultan.testTask
+package sam.sultan.onlineCatalog
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

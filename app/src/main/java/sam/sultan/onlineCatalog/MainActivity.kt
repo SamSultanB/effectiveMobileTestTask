@@ -1,10 +1,10 @@
-package sam.sultan.testTask
+package sam.sultan.onlineCatalog
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import sam.sultan.testTask.databinding.ActivityMainBinding
+import sam.sultan.onlineCatalog.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
