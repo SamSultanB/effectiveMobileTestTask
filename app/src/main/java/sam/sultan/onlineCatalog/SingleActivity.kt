@@ -6,7 +6,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import sam.sultan.onlineCatalog.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class SingleActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 

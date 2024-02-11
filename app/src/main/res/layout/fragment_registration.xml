@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/white"
-    tools:context="sam.sultan.onlineCatalog.registration.presentation.RegistrationFragment">
+    android:background="#FFFFFFFF"
+    tools:context=".registration.RegistrationFragment">
 
     <TextView
         android:id="@+id/titleTxt"
@@ -24,13 +24,14 @@
         android:layout_height="wrap_content"
         app:boxStrokeWidth="0dp"
         android:layout_marginTop="125dp"
-        android:background="@drawable/edit_text_corner"
+        android:background="@color/edit_text_bg"
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="clear_text"
         app:hintEnabled="false"
         android:layout_marginHorizontal="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameEditTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Имя"
@@ -51,6 +52,7 @@
         android:layout_marginHorizontal="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/surnameEditTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Фамилия"
@@ -71,6 +73,7 @@
         android:layout_marginHorizontal="16dp">
 
         <com.vicmikhailau.maskededittext.MaskedEditText
+            android:id="@+id/phoneNumberEditTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Номер телефона"
@@ -88,10 +91,10 @@
         android:layout_marginTop="32dp"
         android:layout_marginHorizontal="16dp"
         android:alpha="0.5"
-        android:backgroundTint="@color/register_btn_bg"
+        android:backgroundTint="#D62F89"
         android:fontFamily="sans-serif-medium"
         android:padding="18dp"
-        android:text="@string/sign_in"
+        android:text="Войти"
         android:clickable="false"
         app:cornerRadius="8dp" />
 
@@ -105,7 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="95dp"
             android:fontFamily="sans-serif-medium"
-            android:text="@string/privacy"
+            android:text="Нажимая кнопку “Войти”, Вы принимаете условия программы лояльности"
             android:textAlignment="center"
             android:textColor="#A0A1A3"
             android:textSize="10sp"

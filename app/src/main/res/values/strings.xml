@@ -10,7 +10,7 @@
     <string name="characteristics">Характеристики</string>
     <string name="consistance">Water, Propylene Glycol, Dipropylene Glycol, Lauric acid, Myristic Acid, Potassium Hydroxide, Lauryl Hydroxysultaine, Potassium Cocoate, Potassium Cocoyl Glycinate, Sodium Chloride, Glycerin, Phenoxyethanol, Chlorphenesin, Fragrance, Caprylyl Glycol, Ethylhexylglycerin, Capric acid, Palmitic Acid, Disodium EDTA, Sodium Bicarbonate, Cocamidopropyl Betaine, Butylene Glycol.</string>
     <string name="moreInfo">Подробнее</string>
-    
+
     <string-array name="sortTypes">
         <item>По популярности</item>
         <item>По уменьшению цены</item>

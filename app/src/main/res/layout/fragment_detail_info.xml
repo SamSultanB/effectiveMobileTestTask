@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    tools:context=".detailInfo.presentation.DetailInfoFragment">
+    tools:context=".detailInfo.DetailInfoFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

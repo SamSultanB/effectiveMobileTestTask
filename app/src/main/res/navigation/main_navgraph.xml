@@ -5,34 +5,34 @@
     android:id="@+id/main_navgraph"
     app:startDestination="@id/registrationFragment">
 
+
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="sam.sultan.onlineCatalog.registration.presentation.RegistrationFragment"
+        android:name="sam.sultan.onlineCatalog.registration.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" >
         <action
-            android:id="@+id/action_registrationFragment_to_catalogFragment"
-            app:destination="@id/catalogFragment" />
+            android:id="@+id/action_registrationFragment_to_catalogFragment2"
+            app:destination="@id/catalogFragment2" />
     </fragment>
     <fragment
-        android:id="@+id/catalogFragment"
-        android:name="sam.sultan.onlineCatalog.catalog.presentation.CatalogFragment"
+        android:id="@+id/catalogFragment2"
+        android:name="sam.sultan.onlineCatalog.catalog.CatalogFragment"
         android:label="fragment_catalog"
         tools:layout="@layout/fragment_catalog" />
     <fragment
         android:id="@+id/detailInfoFragment"
-        android:name="sam.sultan.onlineCatalog.detailInfo.presentation.DetailInfoFragment"
+        android:name="sam.sultan.onlineCatalog.detailInfo.DetailInfoFragment"
         android:label="fragment_detail_info"
         tools:layout="@layout/fragment_detail_info" />
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="sam.sultan.onlineCatalog.profile.presentation.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="sam.sultan.onlineCatalog.favorite.presentation.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
-
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="sam.sultan.onlineCatalog.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
