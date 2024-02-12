@@ -3,8 +3,7 @@ package sam.sultan.onlineCatalog.application
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
-import sam.sultan.onlineCatalog.registration.dbModule
-import sam.sultan.onlineCatalog.registration.repositoryModule
+import sam.sultan.onlineCatalog.profile.profileViewModule
 import sam.sultan.onlineCatalog.registration.viewModule
 
 class Application : Application() {
@@ -14,9 +13,8 @@ class Application : Application() {
         startKoin() {
             modules(
                 listOf(
-                    dbModule,
-                    repositoryModule,
-                    viewModule
+                    viewModule,
+                    profileViewModule
                 )
             )
             androidContext(this@Application)

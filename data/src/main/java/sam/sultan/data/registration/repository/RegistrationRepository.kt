@@ -1,12 +1,14 @@
 package sam.sultan.data.registration.repository
 
+import android.content.Context
+import sam.sultan.data.common.db.AppDatabase
 import sam.sultan.data.registration.local.RegistrationDao
-import sam.sultan.data.registration.local.UserDto
+import sam.sultan.data.registration.local.UserEntity
 
-class RegistrationRepository(val registrationDao: RegistrationDao) {
+class RegistrationRepository(val context: Context) {
 
-    suspend fun saveUser(userData: UserDto) = registrationDao.saveUser(userData)
+    val registrationDao = AppDatabase.getDatabase(context).registrationDao()
 
-//    suspend fun getUser() = registrationDao.getUser()
+    suspend fun saveUser(userData: UserEntity) = registrationDao.saveUser(userData)
 
 }

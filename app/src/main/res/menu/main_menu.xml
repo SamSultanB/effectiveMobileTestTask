@@ -6,7 +6,7 @@
         android:title="Главная" />
 
     <item
-        android:id="@+id/catalogFragment"
+        android:id="@+id/catalogFragment2"
         android:icon="@drawable/catalog_page_icon"
         android:title="Каталог" />
 
@@ -19,7 +19,7 @@
         android:title="Акции" />
 
     <item
-        android:id="@+id/profileFragment"
+        android:id="@+id/profileFragment2"
         android:icon="@drawable/profile_page_icon"
         android:title="Профиль" />
 

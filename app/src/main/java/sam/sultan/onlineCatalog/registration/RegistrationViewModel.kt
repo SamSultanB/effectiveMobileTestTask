@@ -14,4 +14,9 @@ class RegistrationViewModel(val registrationRepository: RegistrationRepository):
         viewModelScope.launch {  registrationRepository.saveUser(mapper.mapToData(userInfo)) }
     }
 
+    fun fieldValidation(input: String): Boolean {
+        val cyrillicPattern = Regex("[а-яёА-ЯЁ]+")
+        return input.matches(cyrillicPattern)
+    }
+
 }

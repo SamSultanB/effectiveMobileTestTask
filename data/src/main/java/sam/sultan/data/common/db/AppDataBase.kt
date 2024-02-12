@@ -6,9 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import sam.sultan.data.pofile.dataSource.ProfileDao
 import sam.sultan.data.registration.local.RegistrationDao
-import sam.sultan.data.registration.local.UserDto
+import sam.sultan.data.registration.local.UserEntity
 
-@Database(entities = [UserDto::class], version = 1, exportSchema = false)
+@Database(entities = [UserEntity::class], version = 1, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun registrationDao(): RegistrationDao
     abstract fun profileDao(): ProfileDao

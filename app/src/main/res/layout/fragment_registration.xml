@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         app:boxStrokeWidth="0dp"
         android:layout_marginTop="125dp"
-        android:background="@color/edit_text_bg"
+        android:background="@drawable/edit_text_corner"
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="clear_text"
         app:hintEnabled="false"
@@ -65,6 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxStrokeWidth="0dp"
+        app:boxStrokeErrorColor="@color/error_red"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_corner"
         app:boxStrokeWidthFocused="0dp"
@@ -78,7 +79,7 @@
             android:layout_height="wrap_content"
             android:hint="Номер телефона"
             android:singleLine="true"
-            android:inputType="phone|number"
+            android:inputType="number"
             android:imeOptions="actionDone"
             app:mask="+7 ### ### ####" />
 

@@ -1,6 +1,9 @@
 package sam.sultan.onlineCatalog.registration
 
+import android.content.res.ColorStateList
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -33,19 +36,78 @@ class RegistrationFragment : Fragment() {
         val customClearIcon = ContextCompat.getDrawable(requireContext(), R.drawable.cancel_icon)
         binding.nameEditTxtContainer.setEndIconDrawable(customClearIcon)
 
-        binding.loginBtn.setOnClickListener {
-            val name = binding.nameEditTxt.text.toString()
-            val surname = binding.surnameEditTxt.text.toString()
-            val number = binding.nameEditTxt.text.toString()
-            findNavController().navigate(R.id.action_registrationFragment_to_catalogFragment2)
-            val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-            bottomNavigationView?.visibility = View.VISIBLE
-        }
+
+        binding.nameEditTxt.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (viewModel.fieldValidation(s.toString()) == false){
+                    binding.nameEditTxt.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.error_red)))
+                }else{
+                    binding.nameEditTxt.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.black)))
+
+                }
+            }
+        })
+
+        binding.surnameEditTxt.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (viewModel.fieldValidation(s.toString()) == false){
+                    binding.surnameEditTxt.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.error_red)))
+                }else{
+                    binding.surnameEditTxt.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.black)))
+
+                }
+            }
+        })
+
+        binding.phoneNumberEditTxt.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                // Call activateBtn when phoneNumberEditTxt is filled
+                if (s?.length == binding.phoneNumberEditTxt.maskString.toString().length) {
+                    activateBtn()
+                }
+            }
+        })
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun activateBtn(){
+        val name = binding.nameEditTxt.text.toString()
+        val surname = binding.surnameEditTxt.text.toString()
+        val number = binding.phoneNumberEditTxt.text.toString()
+        val mask = binding.phoneNumberEditTxt.maskString.toString()
+        if(viewModel.fieldValidation(name) && viewModel.fieldValidation(surname)){
+            binding.loginBtn.isClickable = true
+            binding.loginBtn.alpha = 1f
+            binding.loginBtn.setOnClickListener {
+                val user = UserInfo(name, surname, number)
+                viewModel.saveUser(user)
+                findNavController().navigate(R.id.action_registrationFragment_to_catalogFragment2)
+                val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+                bottomNavigationView?.visibility = View.VISIBLE
+            }
+        }
     }
 
 }

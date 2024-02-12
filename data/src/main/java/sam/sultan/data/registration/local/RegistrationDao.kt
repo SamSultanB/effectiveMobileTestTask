@@ -7,10 +7,7 @@ import androidx.room.Insert
 interface RegistrationDao {
 
     @Insert
-    suspend fun saveUser(userDto: UserDto)
-
-//    @Query("SELECT * FROM user")
-//    suspend fun getUser(): List<UserDto>
+    suspend fun saveUser(userEntity: UserEntity)
 
 
 }
