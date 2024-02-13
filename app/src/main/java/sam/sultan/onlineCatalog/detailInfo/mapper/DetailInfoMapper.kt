@@ -1,4 +1,4 @@
-package sam.sultan.onlineCatalog.catalog.mapper
+package sam.sultan.onlineCatalog.detailInfo.mapper
 
 import sam.sultan.data.catalog.dataSource.local.ProductDB
 import sam.sultan.data.catalog.dataSource.remote.Product
@@ -7,22 +7,21 @@ import sam.sultan.onlineCatalog.catalog.model.Info
 import sam.sultan.onlineCatalog.catalog.model.Price
 import sam.sultan.onlineCatalog.catalog.model.ProductInfo
 
+class DetailInfoMapper {
 
-class CatalogMapper {
-
-    fun mapFromData(product: Product): ProductInfo{
+    fun mapFromData(product: Product): ProductInfo {
         return ProductInfo(product.title, product.subtitle,
-        Price(product.price.price+product.price.unit, product.price.discount, product.price.priceWithDiscount+product.price.unit, product.price.unit),
+            Price(product.price.price+product.price.unit, product.price.discount, product.price.priceWithDiscount+product.price.unit, product.price.unit),
             Feedback(product.feedback.count, product.feedback.rating),
             product.tags,
             product.available,
             product.description,
             product.info.map { Info(it.title, it.value) },
             product.ingredients
-            )
+        )
     }
 
-    fun mapToData(productInfo: ProductInfo): ProductDB{
+    fun mapToData(productInfo: ProductInfo): ProductDB {
         return ProductDB(0, productInfo.title, productInfo.subtitle,
             productInfo.price.price, productInfo.price.discount,
             productInfo.price.priceWithDiscount, productInfo.price.unit,

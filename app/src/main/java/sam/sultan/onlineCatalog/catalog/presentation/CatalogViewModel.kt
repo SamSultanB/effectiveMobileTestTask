@@ -44,4 +44,10 @@ class CatalogViewModel(private val catalogRepository: CatalogRepository): ViewMo
         }
     }
 
+    fun save(productInfo: ProductInfo){
+        viewModelScope.launch {
+            catalogRepository.saveProduct(mapper.mapToData(productInfo))
+        }
+    }
+
 }

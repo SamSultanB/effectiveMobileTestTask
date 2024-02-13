@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import sam.sultan.onlineCatalog.R
 import sam.sultan.onlineCatalog.catalog.model.ProductInfo
 import sam.sultan.onlineCatalog.databinding.FragmentDetailInfoBinding
@@ -19,6 +21,8 @@ class DetailInfoFragment : Fragment() {
     private val binding: FragmentDetailInfoBinding get() = _binding!!
 
     private val adapter = ProductInfoRvAdapter()
+
+    private val viewModel by viewModel<DetailInfoViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,12 +36,19 @@ class DetailInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.arrowBackBtn.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
         binding.priceTxt.paintFlags = binding.priceTxt.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
         binding.priceTxt2.paintFlags = binding.priceTxt2.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
 
         val product = arguments?.getParcelable<ProductInfo>( "key")
         Glide.with(binding.itemImg).load(R.drawable.shampoo).into(binding.itemImg)
 
+        if(product?.isSaved == true){
+            binding.favoriteBtn.setImageResource(R.drawable.saved_icon)
+        }
         product?.info?.let { adapter.setInfoList(it) }
         binding.characteristicsRv.layoutManager = LinearLayoutManager(requireContext())
         binding.characteristicsRv.adapter = adapter
@@ -78,6 +89,13 @@ class DetailInfoFragment : Fragment() {
             }else{
                 binding.consistanceTxt.maxLines = 2
                 binding.hideConsistanceBtn.text = "Подробнее"
+            }
+        }
+
+        binding.favoriteBtn.setOnClickListener {
+            if(product.isSaved==false){
+                product.isSaved = true
+                viewModel.save(product)
             }
         }
 

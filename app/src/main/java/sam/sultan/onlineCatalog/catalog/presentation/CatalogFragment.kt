@@ -43,6 +43,9 @@ class CatalogFragment : Fragment() {
             bundle.putParcelable("key", it)
             findNavController().navigate(R.id.action_catalogFragment2_to_detailInfoFragment, bundle)
         }
+        adapter.clickToSave = {
+            viewModel.save(it)
+        }
     }
 
     override fun onDestroyView() {

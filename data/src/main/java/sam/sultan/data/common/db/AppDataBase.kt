@@ -4,14 +4,20 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import sam.sultan.data.catalog.dataSource.local.CatalogDao
+import sam.sultan.data.catalog.dataSource.local.ProductDB
+import sam.sultan.data.detailInfo.dataSource.DetailInfoDao
 import sam.sultan.data.pofile.dataSource.ProfileDao
 import sam.sultan.data.registration.local.RegistrationDao
 import sam.sultan.data.registration.local.UserEntity
 
-@Database(entities = [UserEntity::class], version = 1, exportSchema = false)
+@Database(entities = [UserEntity::class, ProductDB::class], version = 1, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun registrationDao(): RegistrationDao
     abstract fun profileDao(): ProfileDao
+    abstract fun catalogDao(): CatalogDao
+
+    abstract fun detailInfoDao(): DetailInfoDao
 
 
 

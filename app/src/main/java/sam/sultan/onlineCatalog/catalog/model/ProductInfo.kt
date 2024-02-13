@@ -4,7 +4,6 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-
 data class ProductInfo(
     val title: String,
     val subtitle: String,
@@ -14,5 +13,6 @@ data class ProductInfo(
     val available: Int,
     val description: String,
     val info: List<Info>,
-    val ingredients: String
+    val ingredients: String,
+    var isSaved: Boolean = false
 ): Parcelable

@@ -15,6 +15,7 @@ class ProductRvAdapter: RecyclerView.Adapter<ProductRvAdapter.ViewHolder>() {
     private var productList: ArrayList<ProductInfo> = arrayListOf()
 
     var clickToDetails:((ProductInfo) -> Unit)? = null
+    var clickToSave: ((ProductInfo) -> Unit)? = null
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val binding = ProductItemBinding.bind(itemView)
@@ -29,6 +30,18 @@ class ProductRvAdapter: RecyclerView.Adapter<ProductRvAdapter.ViewHolder>() {
             binding.priceWithDiscountTxt.text = productInfo.price.priceWithDiscount
             binding.discount.text = "- "+productInfo.price.discount.toString() + "%"
             binding.itemImg.setOnClickListener { clickToDetails?.invoke(productInfo) }
+            if(productInfo.isSaved == true){
+                binding.addToFavoriteBtn.setImageResource(R.drawable.saved_icon)
+            }else{
+                binding.addToFavoriteBtn.setImageResource(R.drawable.add_to_favorite_icon)
+            }
+            binding.addToFavoriteBtn.setOnClickListener {
+                binding.addToFavoriteBtn.setImageResource(R.drawable.saved_icon)
+                if(productInfo.isSaved == false){
+                    clickToSave?.invoke(productInfo)
+                    productInfo.isSaved == true
+                }
+            }
         }
     }
 
