@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".catalog.CatalogFragment">
+    tools:context=".catalog.presentation.CatalogFragment">
 
     <TextView
         android:layout_width="wrap_content"

@@ -20,12 +20,16 @@
     </fragment>
     <fragment
         android:id="@+id/catalogFragment2"
-        android:name="sam.sultan.onlineCatalog.catalog.CatalogFragment"
+        android:name="sam.sultan.onlineCatalog.catalog.presentation.CatalogFragment"
         android:label="fragment_catalog"
-        tools:layout="@layout/fragment_catalog" />
+        tools:layout="@layout/fragment_catalog" >
+        <action
+            android:id="@+id/action_catalogFragment2_to_detailInfoFragment"
+            app:destination="@id/detailInfoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailInfoFragment"
-        android:name="sam.sultan.onlineCatalog.detailInfo.DetailInfoFragment"
+        android:name="sam.sultan.onlineCatalog.detailInfo.presentation.DetailInfoFragment"
         android:label="fragment_detail_info"
         tools:layout="@layout/fragment_detail_info" />
     <fragment

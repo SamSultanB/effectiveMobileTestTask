@@ -1,5 +1,9 @@
 package sam.sultan.onlineCatalog.catalog.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 
 data class ProductInfo(
     val title: String,
@@ -11,4 +15,4 @@ data class ProductInfo(
     val description: String,
     val info: List<Info>,
     val ingredients: String
-)
+): Parcelable

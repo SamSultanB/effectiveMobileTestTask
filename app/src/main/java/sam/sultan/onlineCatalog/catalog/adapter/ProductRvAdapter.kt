@@ -1,5 +1,6 @@
 package sam.sultan.onlineCatalog.catalog.adapter
 
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,9 +14,12 @@ class ProductRvAdapter: RecyclerView.Adapter<ProductRvAdapter.ViewHolder>() {
 
     private var productList: ArrayList<ProductInfo> = arrayListOf()
 
+    var clickToDetails:((ProductInfo) -> Unit)? = null
+
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val binding = ProductItemBinding.bind(itemView)
         fun bind(productInfo: ProductInfo){
+            binding.priceTxt.paintFlags = binding.priceTxt.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
             Glide.with(binding.itemImg).load(R.drawable.shampoo).into(binding.itemImg)
             binding.titleTxt.text = productInfo.title
             binding.subtitleTxt.text = productInfo.subtitle
@@ -24,6 +28,7 @@ class ProductRvAdapter: RecyclerView.Adapter<ProductRvAdapter.ViewHolder>() {
             binding.priceTxt.text = productInfo.price.price
             binding.priceWithDiscountTxt.text = productInfo.price.priceWithDiscount
             binding.discount.text = "- "+productInfo.price.discount.toString() + "%"
+            binding.itemImg.setOnClickListener { clickToDetails?.invoke(productInfo) }
         }
     }
 

@@ -1,6 +1,5 @@
-package sam.sultan.onlineCatalog.catalog
+package sam.sultan.onlineCatalog.catalog.presentation
 
-import android.net.http.HttpException
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
