@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -35,7 +37,10 @@ class RegistrationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val customClearIcon = ContextCompat.getDrawable(requireContext(), R.drawable.cancel_icon)
         binding.nameEditTxtContainer.setEndIconDrawable(customClearIcon)
+        binding.surnameEditTxtContainer.setEndIconDrawable(customClearIcon)
+        binding.phoneNumberEditTxtContainer.setEndIconDrawable(customClearIcon)
 
+        registrationResponse()
 
         binding.nameEditTxt.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -92,6 +97,22 @@ class RegistrationFragment : Fragment() {
         _binding = null
     }
 
+    private fun registrationResponse(){
+        viewModel.registrationResponse.observe(viewLifecycleOwner, Observer{
+            if(it.equals("Saved")){
+                findNavController().navigate(R.id.action_registrationFragment_to_profileFragment2)
+                val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+                bottomNavigationView?.visibility = View.VISIBLE
+                Toast.makeText(requireContext(), "Saved", Toast.LENGTH_SHORT).show()
+            }else{
+                findNavController().navigate(R.id.action_registrationFragment_to_catalogFragment2)
+                val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+                bottomNavigationView?.visibility = View.VISIBLE
+                Toast.makeText(requireContext(), "User exists", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
     private fun activateBtn(){
         val name = binding.nameEditTxt.text.toString()
         val surname = binding.surnameEditTxt.text.toString()
@@ -103,9 +124,6 @@ class RegistrationFragment : Fragment() {
             binding.loginBtn.setOnClickListener {
                 val user = UserInfo(name, surname, number)
                 viewModel.saveUser(user)
-                findNavController().navigate(R.id.action_registrationFragment_to_catalogFragment2)
-                val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-                bottomNavigationView?.visibility = View.VISIBLE
             }
         }
     }

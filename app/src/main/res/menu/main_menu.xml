@@ -3,7 +3,8 @@
 
     <item
         android:icon="@drawable/main_page_icon"
-        android:title="Главная" />
+        android:title="Главная"
+        android:enabled="false"/>
 
     <item
         android:id="@+id/catalogFragment2"
@@ -12,11 +13,13 @@
 
     <item
         android:icon="@drawable/basket_page_icon"
-        android:title="Корзина" />
+        android:title="Корзина"
+        android:enabled="false"/>
 
     <item
         android:icon="@drawable/discount_page_icon"
-        android:title="Акции" />
+        android:title="Акции"
+        android:enabled="false"/>
 
     <item
         android:id="@+id/profileFragment2"

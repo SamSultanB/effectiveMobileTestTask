@@ -1,5 +1,7 @@
 package sam.sultan.onlineCatalog.registration
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
@@ -10,8 +12,14 @@ class RegistrationViewModel(val registrationRepository: RegistrationRepository):
 
     val mapper = RegistrationMapper()
 
+    private val _registrationResponse: MutableLiveData<String> = MutableLiveData()
+    val registrationResponse: LiveData<String>
+        get() = _registrationResponse
+
     fun saveUser(userInfo: UserInfo){
-        viewModelScope.launch {  registrationRepository.saveUser(mapper.mapToData(userInfo)) }
+        viewModelScope.launch {
+            _registrationResponse.postValue(registrationRepository.saveUser(mapper.mapToData(userInfo)))
+        }
     }
 
     fun fieldValidation(input: String): Boolean {

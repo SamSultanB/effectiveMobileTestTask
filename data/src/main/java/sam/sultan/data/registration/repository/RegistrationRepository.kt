@@ -9,6 +9,14 @@ class RegistrationRepository(val context: Context) {
 
     val registrationDao = AppDatabase.getDatabase(context).registrationDao()
 
-    suspend fun saveUser(userData: UserEntity) = registrationDao.saveUser(userData)
+    suspend fun saveUser(userData: UserEntity): String {
+        val existed = registrationDao.getUser()
+        if(existed == null){
+            registrationDao.saveUser(userData)
+            return "Saved"
+        }else{
+            return "UserExists"
+        }
+    }
 
 }
