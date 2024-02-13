@@ -1,4 +1,4 @@
-package sam.sultan.onlineCatalog.profile
+package sam.sultan.onlineCatalog.profile.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import sam.sultan.onlineCatalog.R
 import sam.sultan.onlineCatalog.databinding.FragmentProfileBinding
 
 

@@ -45,9 +45,10 @@ dependencies {
 
 
     //retrofit
-    implementation("com.google.code.gson:gson:2.9.0")
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.google.code.gson:gson:2.9.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.6.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.6.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.2.1")
 
     //room
     implementation ("androidx.room:room-ktx:2.6.1")

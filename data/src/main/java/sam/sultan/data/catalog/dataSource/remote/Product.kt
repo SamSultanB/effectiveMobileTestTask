@@ -1,11 +1,6 @@
-package sam.sultan.data.catalog
+package sam.sultan.data.catalog.dataSource.remote
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
-@Entity
-data class ProductTable(
-    @PrimaryKey
+data class Product(
     val id: String,
     val title: String,
     val subtitle: String,

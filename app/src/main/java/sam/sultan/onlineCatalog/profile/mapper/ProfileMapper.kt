@@ -1,8 +1,6 @@
 package sam.sultan.onlineCatalog.profile.mapper
 
 import sam.sultan.data.pofile.dataSource.UserProfile
-import sam.sultan.data.registration.local.UserEntity
-import sam.sultan.onlineCatalog.registration.UserInfo
 
 class ProfileMapper {
 

@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".profile.ProfileFragment">
+    tools:context=".profile.presentation.ProfileFragment">
 
     <TextView
         android:layout_width="wrap_content"
@@ -133,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="6dp"
-                android:text="Marina Ivanovna"
+                android:text="Избранное"
                 android:textSize="14sp"
                 android:textColor="@color/black"
                 android:fontFamily="sans-serif-medium"
@@ -146,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="6dp"
-                android:text="1 "
+                android:text="1 товар"
                 android:textColor="@color/gray"
                 android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"

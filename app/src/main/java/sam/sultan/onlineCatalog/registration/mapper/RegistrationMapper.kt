@@ -1,11 +1,11 @@
 package sam.sultan.onlineCatalog.registration.mapper
 
 import sam.sultan.data.registration.local.UserEntity
-import sam.sultan.onlineCatalog.registration.UserInfo
+import sam.sultan.onlineCatalog.registration.presentation.UserInfo
 
 class RegistrationMapper {
 
-    fun mapFromData(userEntity: UserEntity): UserInfo{
+    fun mapFromData(userEntity: UserEntity): UserInfo {
         return UserInfo(userEntity.name, userEntity.surname, userEntity.phoneNumber)
     }
 

@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="sam.sultan.onlineCatalog.registration.RegistrationFragment"
+        android:name="sam.sultan.onlineCatalog.registration.presentation.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" >
         <action
@@ -35,7 +35,7 @@
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/profileFragment2"
-        android:name="sam.sultan.onlineCatalog.profile.ProfileFragment"
+        android:name="sam.sultan.onlineCatalog.profile.presentation.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

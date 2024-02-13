@@ -1,4 +1,4 @@
-package sam.sultan.onlineCatalog.registration
+package sam.sultan.onlineCatalog.registration.presentation
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

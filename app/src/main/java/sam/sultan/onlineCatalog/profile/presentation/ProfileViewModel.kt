@@ -1,4 +1,4 @@
-package sam.sultan.onlineCatalog.profile
+package sam.sultan.onlineCatalog.profile.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

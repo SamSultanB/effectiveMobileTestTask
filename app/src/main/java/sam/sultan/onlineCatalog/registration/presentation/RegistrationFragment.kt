@@ -1,4 +1,4 @@
-package sam.sultan.onlineCatalog.registration
+package sam.sultan.onlineCatalog.registration.presentation
 
 import android.content.res.ColorStateList
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package sam.sultan.onlineCatalog.registration
+package sam.sultan.onlineCatalog.registration.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
