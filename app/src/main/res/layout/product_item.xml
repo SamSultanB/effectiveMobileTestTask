@@ -2,9 +2,10 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
+    app:cardElevation="1dp"
     android:layout_margin="7dp">
     
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -93,22 +94,29 @@
 
         <TextView
             android:id="@+id/titleTxt"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
+            android:ellipsize="end"
             android:text="title"
-            android:textSize="12sp"
             android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/addToFavoriteBtn"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/priceWithDiscountTxt"
             app:layout_constraintTop_toBottomOf="@+id/priceWithDiscountTxt" />
 
         <TextView
             android:id="@+id/subtitleTxt"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
             android:text="subtitle"
-            android:textSize="10sp"
             android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/addToFavoriteBtn"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/titleTxt"
             app:layout_constraintTop_toBottomOf="@+id/titleTxt" />
 

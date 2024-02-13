@@ -12,7 +12,7 @@ class CatalogMapper {
 
     fun mapFromData(product: Product): ProductInfo{
         return ProductInfo(product.title, product.subtitle,
-        Price(product.price.price, product.price.discount, product.price.priceWithDiscount, product.price.unit),
+        Price(product.price.price+product.price.unit, product.price.discount, product.price.priceWithDiscount+product.price.unit, product.price.unit),
             Feedback(product.feedback.count, product.feedback.rating),
             product.tags,
             product.available,

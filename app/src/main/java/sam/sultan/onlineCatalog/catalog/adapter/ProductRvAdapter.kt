@@ -21,9 +21,9 @@ class ProductRvAdapter: RecyclerView.Adapter<ProductRvAdapter.ViewHolder>() {
             binding.subtitleTxt.text = productInfo.subtitle
             binding.rateTxt.text = productInfo.feedback.rating.toString()
             binding.rateAmountTxt.text = productInfo.feedback.count.toString()
-            binding.priceTxt.text = productInfo.price.price + productInfo.price.unit
-            binding.priceWithDiscountTxt.text = productInfo.price.priceWithDiscount+ productInfo.price.unit
-            binding.discount.text = "- "+productInfo.price.discount.toString()
+            binding.priceTxt.text = productInfo.price.price
+            binding.priceWithDiscountTxt.text = productInfo.price.priceWithDiscount
+            binding.discount.text = "- "+productInfo.price.discount.toString() + "%"
         }
     }
 

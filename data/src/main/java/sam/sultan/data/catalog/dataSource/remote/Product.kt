@@ -1,5 +1,8 @@
 package sam.sultan.data.catalog.dataSource.remote
 
+data class ProductResponse(
+    val items: List<Product>
+)
 data class Product(
     val id: String,
     val title: String,
