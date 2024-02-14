@@ -96,6 +96,7 @@
         app:cardCornerRadius="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/favoritesBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/edit_text_bg">
@@ -133,10 +134,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="6dp"
-                android:text="Избранное"
-                android:textSize="14sp"
-                android:textColor="@color/black"
                 android:fontFamily="sans-serif-medium"
+                android:text="Избранное"
+                android:textColor="@color/black"
+                android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView7"
                 app:layout_constraintTop_toTopOf="parent" />
 

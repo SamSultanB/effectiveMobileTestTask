@@ -96,6 +96,7 @@ class DetailInfoFragment : Fragment() {
             if(product.isSaved==false){
                 product.isSaved = true
                 viewModel.save(product)
+                binding.favoriteBtn.setImageResource(R.drawable.saved_icon)
             }
         }
 

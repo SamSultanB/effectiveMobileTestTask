@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import sam.sultan.data.catalog.dataSource.local.CatalogDao
 import sam.sultan.data.catalog.dataSource.local.ProductDB
 import sam.sultan.data.detailInfo.dataSource.DetailInfoDao
+import sam.sultan.data.favorite.dataSource.FavoritesDao
 import sam.sultan.data.pofile.dataSource.ProfileDao
 import sam.sultan.data.registration.local.RegistrationDao
 import sam.sultan.data.registration.local.UserEntity
@@ -16,8 +17,8 @@ abstract class AppDatabase: RoomDatabase() {
     abstract fun registrationDao(): RegistrationDao
     abstract fun profileDao(): ProfileDao
     abstract fun catalogDao(): CatalogDao
-
     abstract fun detailInfoDao(): DetailInfoDao
+    abstract fun favoritesDao(): FavoritesDao
 
 
 
